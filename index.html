@@ -661,6 +661,216 @@
   .metric:nth-child(2) { animation-delay: 0.65s; }
   .metric:nth-child(3) { animation-delay: 0.8s; }
   .metric:nth-child(4) { animation-delay: 0.95s; }
+
+  /* ─── TABLET (max 1024px) ─── */
+  @media (max-width: 1024px) {
+    .container { padding: 0 40px; }
+    nav { padding: 0 40px; }
+    .hero-left { padding: 80px 40px 60px 40px; }
+    .hero-right { padding: 40px 40px 60px 40px; }
+    .profile-grid { grid-template-columns: 1fr; gap: 48px; }
+    .cred-grid { grid-template-columns: 1fr 1fr; }
+    .strata-grid { grid-template-columns: 1fr 1fr; }
+    .transfer-grid { grid-template-columns: 1fr 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 40px; }
+    footer { padding: 28px 40px; }
+  }
+
+  /* ─── MOBILE (max 768px) ─── */
+  @media (max-width: 768px) {
+
+    /* NAV */
+    nav {
+      padding: 0 20px;
+      height: 52px;
+    }
+    .nav-links { display: none; }
+    .nav-logo { font-size: 18px; }
+
+    /* HERO */
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero::after { display: none; }
+    .hero-left {
+      padding: 72px 24px 40px 24px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 8vw, 40px);
+      letter-spacing: -0.5px;
+    }
+    .hero-sub { font-size: 17px; max-width: 100%; }
+    .hero-right {
+      padding: 0 24px 48px 24px;
+      background: #141414;
+    }
+    .hero-metrics {
+      grid-template-columns: 1fr 1fr;
+    }
+    .metric { padding: 24px 20px; }
+    .metric-num { font-size: 36px; }
+    .metric-label { font-size: 10px; }
+
+    /* GENERAL */
+    section { padding: 64px 0; }
+    .container { padding: 0 24px; }
+    .section-header { margin-bottom: 40px; }
+    .section-title { font-size: clamp(22px, 6vw, 32px); }
+
+    /* PROFILE */
+    .profile-grid { grid-template-columns: 1fr; gap: 40px; }
+    .profile-lead { font-size: 19px; }
+    .profile-aside {
+      border-left: none;
+      border-top: 3px solid var(--red);
+      padding-left: 0;
+      padding-top: 32px;
+    }
+
+    /* CASE STUDIES */
+    .case-study {
+      grid-template-columns: 1fr;
+      padding: 40px 0;
+    }
+    .cs-meta {
+      padding-right: 0;
+      padding-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cs-number {
+      font-size: 40px;
+      margin-bottom: 0;
+      line-height: 1.1;
+    }
+    .cs-body {
+      border-left: none;
+      border-top: 1px solid var(--rule);
+      padding-left: 0;
+      padding-top: 32px;
+    }
+    .cs-row {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .results-list {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .cs-problem { padding: 20px; }
+    .cs-problem-text { font-size: 15px; }
+    .cs-results { padding: 20px; }
+
+    /* STRATA */
+    .strata-grid {
+      grid-template-columns: 1fr;
+      gap: 1px;
+    }
+    .strata-phase { padding: 32px 24px; }
+    .strata-phase-num { font-size: 36px; }
+    .strata-phase-name { font-size: 20px; }
+    .strata-footer {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* CREDENTIALS */
+    .cred-grid { grid-template-columns: 1fr; }
+    .cred-card { padding: 32px 24px; }
+    .cred-intro { font-size: 16px; }
+
+    /* TRANSFER / EXPERTISE */
+    .transfer-grid { grid-template-columns: 1fr; }
+    .transfer-item { padding: 28px 24px; }
+    .industries-lead { font-size: 17px; }
+    .competency-bar {
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+    }
+    .comp-list { gap: 8px; }
+    .comp-list span { font-size: 11px; }
+
+    /* CONTACT */
+    #contact { padding: 64px 0; }
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 0 24px;
+    }
+    .contact-headline { font-size: clamp(26px, 7vw, 38px); }
+    .contact-sub { font-size: 17px; }
+
+    /* FOOTER */
+    footer {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+      padding: 24px;
+    }
+  }
+
+  /* ─── HAMBURGER MENU ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.7);
+    transition: all 0.3s;
+  }
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    top: 52px; left: 0; right: 0;
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    z-index: 99;
+    padding: 16px 24px 24px;
+    flex-direction: column;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: color 0.2s;
+  }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover { color: var(--white); }
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+  }
+
+  /* ─── SMALL MOBILE (max 480px) ─── */
+  @media (max-width: 480px) {
+    .hero-metrics { grid-template-columns: 1fr; }
+    .metric { padding: 20px; }
+    .hero h1 { font-size: clamp(26px, 9vw, 36px); }
+    .cs-meta { flex-direction: column; gap: 8px; }
+    .hero-certs { flex-direction: column; gap: 8px; }
+    .cert-badge { width: fit-content; }
+  }
+
 </style>
 </head>
 <body>
@@ -676,7 +886,18 @@
     <li><a href="#industries">Expertise</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="#profile" onclick="closeNav()">Profile</a>
+  <a href="#strata" onclick="closeNav()">Methodology</a>
+  <a href="#work" onclick="closeNav()">Engagements</a>
+  <a href="#credentials" onclick="closeNav()">Credentials</a>
+  <a href="#industries" onclick="closeNav()">Expertise</a>
+  <a href="#contact" onclick="closeNav()">Contact</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1221,5 +1442,22 @@
   <p>Organizational architecture. Executive partnership. Transformation that holds.</p>
 </footer>
 
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', function(e) {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.nav-hamburger');
+    if (!nav.contains(e.target) && !btn.contains(e.target)) {
+      nav.classList.remove('open');
+    }
+  });
+</script>
 </body>
 </html>
